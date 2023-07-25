@@ -4,6 +4,7 @@ import Notification from './Notification';
 import { addComment } from '../redux/action';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../auth';
+import { toast } from 'react-toastify';
 
 const CommentForm = ({ postId }) => {
   const dispatch = useDispatch();
@@ -23,7 +24,10 @@ const CommentForm = ({ postId }) => {
     setComment('');
     
     // For this example, show a notification with the message
-    setNotification('New comment added successfully!');
+    toast.success('Comment added successfully!', {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+    
     // router.push('/')
 
   };

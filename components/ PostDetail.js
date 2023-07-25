@@ -22,7 +22,7 @@ const PostDetail = ({ postId }) => {
           <h2>Comments</h2>
           <ul>
             {post.comments.map((comment, index) => (
-              <li key={index}>
+              <li key={index} className='mt-2'>
                 <strong>author:{comment?.userName}</strong>
                 <p>comment: {comment?.comment}</p>
               </li>
