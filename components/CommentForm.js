@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import Notification from './Notification';
 import { addComment } from '../redux/action';
 import { useDispatch } from 'react-redux';
-import { useRouter } from 'next/router';
+import { useAuth } from '../auth';
 
 const CommentForm = ({ postId }) => {
   const dispatch = useDispatch();
   const [comment, setComment] = useState('');
   const [notification, setNotification] = useState('');
-  const router = useRouter();
+ 
+  const { user } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,13 +18,13 @@ const CommentForm = ({ postId }) => {
     // If validation passes, save the comment to the API or database
     // Optionally, trigger the notification system for the post owner
     // Clear the comment input after submission
-   
-    dispatch(addComment({"comment": comment, "postId": postId}));
+  
+    dispatch(addComment({"comment":  comment, "userName": user.email, "postId": postId}));
     setComment('');
     
     // For this example, show a notification with the message
     setNotification('New comment added successfully!');
-    router.push('/')
+    // router.push('/')
 
   };
 

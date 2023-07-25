@@ -6,7 +6,7 @@
       "summary": "This is the first sample post.",
       "content": "Sample content for post 1.",
       "publicationDate": "2023-07-25",
-      "comments": []
+      "comments": [{"userName": "user1", "comment": "nice blog" }]
     },
     {
       "id": "2",

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 export default function Home({ posts }) {
   const reduxPosts = useSelector((state) => state.posts.posts);
-
+ 
   return (
     <div>
       <Header />

@@ -3,9 +3,12 @@ import { useRouter } from 'next/router';
 
 import CommentForm from '../../components/CommentForm';
 import PostDetail from '../../components/ PostDetail';
+import { useAuth } from '../../auth';
+import Header from '../../components/Header';
 
 export default function Post(props) {
   const router = useRouter();
+  const { user } = useAuth();
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -13,8 +16,9 @@ export default function Post(props) {
 
   return (
     <div>
+      <Header />
       <PostDetail postId={props.id} />
-      <CommentForm  postId={props.id} /> {/* Pass the slug as a prop */}
+     {user && <CommentForm  postId={props.id} /> }{/* Pass the slug as a prop */}
       {/* Display existing comments here */}
     </div>
   );
