@@ -1,0 +1,19 @@
+
+  [
+    {
+      "id": "1",
+      "title": "Sample Post 1",
+      "summary": "This is the first sample post.",
+      "content": "Sample content for post 1.",
+      "publicationDate": "2023-07-25",
+      "comments": []
+    },
+    {
+      "id": "2",
+      "title": "Sample Post 2",
+      "summary": "This is the second sample post.",
+      "content": "Sample content for post 2.",
+      "publicationDate": "2023-07-26",
+      "comments": []
+    }
+  ]
